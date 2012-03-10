@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Codes1</title>
+  <title>ANZSIC Codes</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+      <div class="row">
+        <div class="span1">
+          <h2>Menu</h2>
+          <p> Test Test Test</p>
+          <p> Test Test Test</p>
+          <p> Test Test Test</p>
+        </div>
+        <div class="span11">
+          <%= yield %>
+        </div>
+    </div>
+  </div>
 </body>
 </html>

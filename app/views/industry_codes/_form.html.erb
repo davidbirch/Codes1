@@ -1,0 +1,53 @@
+<%= form_for(@industry_code) do |f| %>
+  <% if @industry_code.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@industry_code.errors.count, "error") %> prohibited this industry_code from being saved:</h2>
+
+      <ul>
+      <% @industry_code.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :division_code %><br />
+    <%= f.text_field :division_code %>
+  </div>
+  <div class="field">
+    <%= f.label :division_description %><br />
+    <%= f.text_field :division_description %>
+  </div>
+  <div class="field">
+    <%= f.label :subdivision_code %><br />
+    <%= f.text_field :subdivision_code %>
+  </div>
+  <div class="field">
+    <%= f.label :subdivision_description %><br />
+    <%= f.text_field :subdivision_description %>
+  </div>
+  <div class="field">
+    <%= f.label :group_code %><br />
+    <%= f.text_field :group_code %>
+  </div>
+  <div class="field">
+    <%= f.label :group_description %><br />
+    <%= f.text_field :group_description %>
+  </div>
+  <div class="field">
+    <%= f.label :class_code %><br />
+    <%= f.text_field :class_code %>
+  </div>
+  <div class="field">
+    <%= f.label :class_description %><br />
+    <%= f.text_field :class_description %>
+  </div>
+  <div class="field">
+    <%= f.label :primary_activity %><br />
+    <%= f.text_field :primary_activity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

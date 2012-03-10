@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Division code:</b>
+  <%= @industry_code.division_code %>
+</p>
+
+<p>
+  <b>Division description:</b>
+  <%= @industry_code.division_description %>
+</p>
+
+<p>
+  <b>Subdivision code:</b>
+  <%= @industry_code.subdivision_code %>
+</p>
+
+<p>
+  <b>Subdivision description:</b>
+  <%= @industry_code.subdivision_description %>
+</p>
+
+<p>
+  <b>Group code:</b>
+  <%= @industry_code.group_code %>
+</p>
+
+<p>
+  <b>Group description:</b>
+  <%= @industry_code.group_description %>
+</p>
+
+<p>
+  <b>Class code:</b>
+  <%= @industry_code.class_code %>
+</p>
+
+<p>
+  <b>Class description:</b>
+  <%= @industry_code.class_description %>
+</p>
+
+<p>
+  <b>Primary activity:</b>
+  <%= @industry_code.primary_activity %>
+</p>
+
+
+<%= link_to 'Edit', edit_industry_code_path(@industry_code) %> |
+<%= link_to 'Back', industry_codes_path %>

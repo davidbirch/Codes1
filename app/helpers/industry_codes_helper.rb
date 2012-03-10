@@ -1,0 +1,2 @@
+module IndustryCodesHelper
+end
