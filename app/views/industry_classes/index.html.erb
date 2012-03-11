@@ -1,0 +1,26 @@
+<h1>Industry Classs</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @industry_classes.each do |industry_class| %>
+      <tr>
+        <td><%= industry_class.id %></td>
+        <td><%= link_to industry_class.code, industry_class_path(industry_class) %></td>
+        <td><%= industry_class.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_industry_class_path(industry_class), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', industry_class_path(industry_class), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_industry_class_path, :class => 'btn btn-primary' %>

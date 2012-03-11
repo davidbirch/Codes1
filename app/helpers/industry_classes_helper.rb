@@ -1,0 +1,2 @@
+module IndustryClassesHelper
+end

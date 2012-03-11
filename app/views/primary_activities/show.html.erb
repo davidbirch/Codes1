@@ -1,0 +1,22 @@
+<h1>Primary Activity</h1>
+
+<p>
+  <b>Description</b><br>
+  <%= @primary_activity.description %>
+</p>
+
+<p>
+  <b>Industry class code</b><br>
+  <%= @primary_activity.industry_class_code %>
+</p>
+
+<p>
+  <b>Industry class</b><br>
+  <%= @primary_activity.industry_class_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', primary_activities_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_primary_activity_path(@primary_activity), :class => 'btn' %>
+  <%= link_to 'Delete', primary_activity_path(@primary_activity), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

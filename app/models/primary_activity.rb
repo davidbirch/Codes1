@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: primary_activities
+#
+#  id                  :integer(4)      not null, primary key
+#  description         :string(255)
+#  industry_class_code :string(255)
+#  industry_class_id   :integer(4)
+#  created_at          :datetime        not null
+#  updated_at          :datetime        not null
+#
+
+class PrimaryActivity < ActiveRecord::Base
+  
+  belongs_to :industry_class
+  
+end

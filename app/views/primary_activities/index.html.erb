@@ -1,0 +1,26 @@
+<h1>Primary Activitys</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @primary_activities.each do |primary_activity| %>
+      <tr>
+        <td><%= primary_activity.id %></td>
+        <td><%= link_to primary_activity.description, primary_activity_path(primary_activity) %></td>
+        <td><%= primary_activity.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_primary_activity_path(primary_activity), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', primary_activity_path(primary_activity), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_primary_activity_path, :class => 'btn btn-primary' %>

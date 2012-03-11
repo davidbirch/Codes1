@@ -1,0 +1,27 @@
+<h1>Industry Class</h1>
+
+<p>
+  <b>Code</b><br>
+  <%= @industry_class.code %>
+</p>
+
+<p>
+  <b>Description</b><br>
+  <%= @industry_class.description %>
+</p>
+
+<p>
+  <b>Group code</b><br>
+  <%= @industry_class.group_code %>
+</p>
+
+<p>
+  <b>Group</b><br>
+  <%= @industry_class.group_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', industry_classes_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_industry_class_path(@industry_class), :class => 'btn' %>
+  <%= link_to 'Delete', industry_class_path(@industry_class), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

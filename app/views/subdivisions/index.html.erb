@@ -1,0 +1,26 @@
+<h1>Subdivisions</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subdivisions.each do |subdivision| %>
+      <tr>
+        <td><%= subdivision.id %></td>
+        <td><%= link_to subdivision.code, subdivision_path(subdivision) %></td>
+        <td><%= subdivision.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_subdivision_path(subdivision), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', subdivision_path(subdivision), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_subdivision_path, :class => 'btn btn-primary' %>

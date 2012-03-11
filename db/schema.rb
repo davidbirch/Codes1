@@ -11,20 +11,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310054143) do
+ActiveRecord::Schema.define(:version => 20120311014614) do
 
-  create_table "industry_codes", :force => true do |t|
-    t.string   "division_code"
-    t.string   "division_description"
+  create_table "divisions", :force => true do |t|
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "code"
+    t.string   "description"
     t.string   "subdivision_code"
-    t.string   "subdivision_description"
+    t.integer  "subdivision_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "industry_classes", :force => true do |t|
+    t.string   "code"
+    t.string   "description"
     t.string   "group_code"
-    t.string   "group_description"
-    t.string   "class_code"
-    t.string   "class_description"
-    t.string   "primary_activity"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.integer  "group_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "primary_activities", :force => true do |t|
+    t.string   "description"
+    t.string   "industry_class_code"
+    t.integer  "industry_class_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "subdivisions", :force => true do |t|
+    t.string   "code"
+    t.string   "description"
+    t.string   "division_code"
+    t.integer  "division_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

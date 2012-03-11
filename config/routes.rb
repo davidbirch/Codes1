@@ -1,16 +1,16 @@
 Codes1::Application.routes.draw do
   
-  resources :industry_codes
-
   # -------------------------------------------------------
   # static pages
-  
-  
+    
   # -------------------------------------------------------
   # specific resource routes
-  
-  
-  
+  resources :primary_activities
+  resources :industry_classes
+  resources :groups
+  resources :subdivisions
+  resources :divisions
+    
   # -------------------------------------------------------
   # default route
   root :to => 'pages#home'
