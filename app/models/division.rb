@@ -13,4 +13,6 @@ class Division < ActiveRecord::Base
   
   has_many :subdivisions
   
+  extend FriendlyId
+  friendly_id :description, use: :slugged
 end

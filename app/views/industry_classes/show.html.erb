@@ -1,27 +1,23 @@
-<h1>Industry Class</h1>
+  <div class="row">
+    <p>This information is based on Australian and New Zealand Standard Industrial Classification (ANZSIC), 2006 (Revision 1.0).  You should always verify that this is the latest information at the Australian Bureau of Statistics.<p>
+  </div>
 
-<p>
-  <b>Code</b><br>
-  <%= @industry_class.code %>
-</p>
-
-<p>
-  <b>Description</b><br>
-  <%= @industry_class.description %>
-</p>
-
-<p>
-  <b>Group code</b><br>
-  <%= @industry_class.group_code %>
-</p>
-
-<p>
-  <b>Group</b><br>
-  <%= @industry_class.group_id %>
-</p>
-
+  <div class="row">
+    <h2 class="menu_division"><%= @industry_class.code %> <%= @industry_class.description %></h2>
+    <h4 class="menu_group">Code</h3>
+    <p class="menu_industry_classification"><%= @industry_class.code %></p>
+    <h4 class="menu_group">Description</h3>
+    <p class="menu_industry_classification"><%= @industry_class.description %></p>
+    <h4 class="menu_group">Group code</h3>
+    <p class="menu_industry_classification"><%= @industry_class.group_code %></p>
+    <h4 class="menu_group">Group</h3>
+    <p class="menu_industry_classification"><%= @industry_class.group_id %></p>
+    <h4 class="menu_group">Primary Activities</h4>
+    <% @primary_activities.each do |primary_activity| %>
+      <p class="menu_industry_classification"><%= primary_activity.description %></p>
+  <% end %>
+  
 <div class="form-actions">
   <%= link_to 'Back', industry_classes_path, :class => 'btn'  %>
-  <%= link_to 'Edit', edit_industry_class_path(@industry_class), :class => 'btn' %>
-  <%= link_to 'Delete', industry_class_path(@industry_class), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>
+  </div>

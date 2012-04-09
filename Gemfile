@@ -41,4 +41,7 @@ gem 'jquery-rails'
 
 
 # to support Annotation
-gem 'annotate', '~> 2.4.1.beta' 
+gem 'annotate', '~> 2.4.1.beta'
+
+# to support Friendly URLs
+gem 'friendly_id', '~> 4.0.1'

@@ -15,5 +15,7 @@ class IndustryClass < ActiveRecord::Base
   
   belongs_to :group
   has_many :primary_activities
-    
+  
+  extend FriendlyId
+  friendly_id :description
 end

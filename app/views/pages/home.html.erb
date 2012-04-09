@@ -1,35 +1,14 @@
-<div class="row">
-  <div class="span4">
-    <% @divisions.each do |division| %>
-      <p class="menu"><%= division.id %> - <%= division.description %></p>
-    <% end %>
+  <div class="row">
+    <p>This information is based on Australian and New Zealand Standard Industrial Classification (ANZSIC), 2006 (Revision 1.0).  You should always verify that this is the latest information at the Australian Bureau of Statistics.<p>
   </div>
-  <div class="span8">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Code</th>
-          <th>Created at</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @industry_classes.each do |industry_class| %>
-          <tr>
-            <td><%= industry_class.id %></td>
-            <td><%= link_to industry_class.code, industry_class_path(industry_class) %></td>
-            <td><%= industry_class.created_at %></td>
-            <td>
-              <%= link_to 'Edit', edit_industry_class_path(industry_class), :class => 'btn btn-mini' %>
-              <%= link_to 'Destroy', industry_class_path(industry_class), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-</div>
-
+  
+  <div class="row">
+    <p>Select a division or search for an industry classification.</p>
+    <h2 class="menu_division">Divisions</h2>
+    <% @divisions.each do |division| %>
+      <p class="menu"><%= link_to division.code+": "+division.description, division_path(division) %></p>
+    <% end %>  
+  </div>
 
 
 

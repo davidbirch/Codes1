@@ -11,14 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120311014614) do
+ActiveRecord::Schema.define(:version => 20120312033101) do
 
   create_table "divisions", :force => true do |t|
     t.string   "code"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "slug"
   end
+
+  add_index "divisions", ["slug"], :name => "index_divisions_on_slug"
 
   create_table "groups", :force => true do |t|
     t.string   "code"
