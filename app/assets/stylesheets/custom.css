@@ -4,33 +4,19 @@
     background-color: transparent;  
 }
 
+.centre{
+    text-align:center;
+}
+
+
 body{
     background: url("../assets/graph-tile.png") repeat scroll center top transparent;    
 }
 
-.menu_division{
-    font-size: 16px;
-}
-.menu_subdivision{
-    font-size: 16px;
-}
-.menu_group{
-    margin-left: 9px;
+h4, h5{
     margin-bottom: 9px;
-    font-size: 13px;
-}
-.menu_industry_classification{
-    margin-left: 9px;
-    font-size: 13px;
-   
 }
 
 a.menu{
     text-decoration: underline;
-}
-
-
-td.industry_code{
-    font-size: 10px;
-    line-height: 12px;
 }

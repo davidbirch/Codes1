@@ -1,19 +1,12 @@
-  <div class="row">
-    <p>This information is based on Australian and New Zealand Standard Industrial Classification (ANZSIC), 2006 (Revision 1.0).  You should always verify that this is the latest information at the Australian Bureau of Statistics.<p>  
-  </div>
-  
-  <div class="row">
-    <p>Select an industry classification.</p>
-    <h2 class="menu_division"><%= @division.description %></h2>
-    <% @subdivisions.each do |subdivision| %>
-      <h3 class="menu_subdivision"><%= subdivision.code %>: <%= subdivision.description %></h3>
-      <% subdivision.groups.each do |group| %>
-        <h4 class="menu_group"><%= group.code %>: <%= group.description %></h4>
-        <% group.industry_classes.each do |industry_class| %>
-          <p class="menu_industry_classification"><%= link_to industry_class.code + " " + industry_class.description, industry_class_path(industry_class), :class => "menu" %></p>
-        <%end %>
-      <%end %>
+<p>This information is based on Australian and New Zealand Standard Industrial Classification (ANZSIC), 2006 (Revision 1.0).  You should always verify that this is the latest information at the Australian Bureau of Statistics.<p>  
+<p>Select an industry classification.</p>
+<h3><%= @division.description %></h3>
+<% @subdivisions.each do |subdivision| %>
+  <h4><%= subdivision.code %>: <%= subdivision.description %></h4>
+  <% subdivision.groups.each do |group| %>
+    <h5><%= group.code %>: <%= group.description %></h5>
+    <% group.industry_classes.each do |industry_class| %>
+      <p><%= link_to industry_class.code + " " + industry_class.description, industry_class_path(industry_class), :class => "menu" %></p>
     <%end %>
-     
-  </div>
- 
+  <%end %>
+<%end %>

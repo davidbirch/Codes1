@@ -1,23 +1,16 @@
-  <div class="row">
     <p>This information is based on Australian and New Zealand Standard Industrial Classification (ANZSIC), 2006 (Revision 1.0).  You should always verify that this is the latest information at the Australian Bureau of Statistics.<p>
-  </div>
-
-  <div class="row">
-    <h2 class="menu_division"><%= @industry_class.code %> <%= @industry_class.description %></h2>
-    <h4 class="menu_group">Code</h3>
-    <p class="menu_industry_classification"><%= @industry_class.code %></p>
-    <h4 class="menu_group">Description</h3>
-    <p class="menu_industry_classification"><%= @industry_class.description %></p>
-    <h4 class="menu_group">Group code</h3>
-    <p class="menu_industry_classification"><%= @industry_class.group_code %></p>
-    <h4 class="menu_group">Group</h3>
-    <p class="menu_industry_classification"><%= @industry_class.group_id %></p>
-    <h4 class="menu_group">Primary Activities</h4>
-    <% @primary_activities.each do |primary_activity| %>
-      <p class="menu_industry_classification"><%= primary_activity.description %></p>
-  <% end %>
-  
-<div class="form-actions">
-  <%= link_to 'Back', industry_classes_path, :class => 'btn'  %>
-</div>
-  </div>
+    <h3><%= @industry_class.code %> <%= @industry_class.description %></h3>
+    <dl class="dl-horizontal">
+      <dt>Code</dt>
+      <dd><%= @industry_class.code %></dd>
+      <dt>Description</dt>
+      <dd><%= @industry_class.description %></dd>
+      <dt>Group code</dt>
+      <dd><%= @industry_class.group_code %></dd>
+      <dt>Group</dt>
+      <dd><%= @industry_class.group_id %></dd>
+      <dt>Primary Activities</dt>
+      <% @primary_activities.each do |primary_activity| %>
+        <dd><%= primary_activity.description %></dd>
+      <% end %>
+    </dl>

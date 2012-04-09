@@ -14,7 +14,19 @@
 <body>
   <%= render 'layouts/header' %>    
   <div class="container">
-    <%= yield %>
+    <div class="row">
+      <div class="span12 centre">
+        <p><img src="http://placehold.it/320x50" alt="Placeholder Image 320 x 50" /></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span8">
+        <%= yield %>
+      </div>
+      <div class="span4 centre">
+        <p><img src="http://placehold.it/200x200" alt="Placeholder Image 200 x 200" /></p>
+      </div>
+    </div> 
   </div>
   <%= render 'layouts/footer' %>
 </body>

@@ -2,7 +2,9 @@ Codes1::Application.routes.draw do
   
   # -------------------------------------------------------
   # static pages
-    
+  match '/a-to-z',   :to => 'pages#a_to_z'
+  
+  
   # -------------------------------------------------------
   # specific resource routes
   resources :primary_activities

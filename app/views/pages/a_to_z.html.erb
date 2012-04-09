@@ -1,0 +1,14 @@
+<p>This information is based on Australian and New Zealand Standard Industrial Classification (ANZSIC), 2006 (Revision 1.0).  You should always verify that this is the latest information at the Australian Bureau of Statistics.<p>
+<p>Select a division.</p>
+<% @divisions.each do |division| %>
+  <h3><%= division.description %></h3>
+    <% division.subdivisions.each do |subdivision| %>
+    <h4><%= subdivision.code %>: <%= subdivision.description %></h4>
+    <% subdivision.groups.each do |group| %>
+      <h5><%= group.code %>: <%= group.description %></h5>
+      <% group.industry_classes.each do |industry_class| %>
+        <p><%= link_to industry_class.code + " " + industry_class.description, industry_class_path(industry_class), :class => "menu" %></p>
+      <% end %>
+    <% end %>
+  <% end %> 
+<% end %>
